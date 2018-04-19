@@ -15,7 +15,7 @@ export default class Messages extends Component {
       <div key={i}>
         <div>{m.user}</div>
         <div>{m.text}</div>
-        <button>Approve!</button>
+        <button onClick={() => this.props.onApprove(m.ts)}>Approve!</button>
         <hr/>
       </div>
     );
@@ -32,5 +32,6 @@ export default class Messages extends Component {
 }
 
 Messages.propTypes = {
-  messages: PropTypes.array.isRequired
+  messages: PropTypes.array.isRequired,
+  onApprove: PropTypes.func.isRequired
 };
